@@ -18,7 +18,24 @@ function Contacts({post}) {
   </div>
 }
 
+function Profile1({account}) {
+  return <div>
+    <h4>
+      {account.fullname ? account.fullname : "Anonymous"}
+    </h4>
+  </div>
+}
 
+function Profile2({account}) {
+    return <div>
+      <h4>
+        {account.fullname || "Anonymous"}
+      </h4>
+    </div>
+}
+// cond ? cond : default
+// consider "" and 0 cases
+// eq. Number will result in 0 being renderedaaa
 
 
 // using a function when there is a lot of and will be reused
