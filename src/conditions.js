@@ -18,6 +18,9 @@ function Contacts({post}) {
   </div>
 }
 
+// cond ? cond : default
+// consider "" and 0 cases
+// eq. Number will result in 0 being renderedaaa
 function Profile1({account}) {
   return <div>
     <h4>
@@ -33,9 +36,29 @@ function Profile2({account}) {
       </h4>
     </div>
 }
-// cond ? cond : default
-// consider "" and 0 cases
-// eq. Number will result in 0 being renderedaaa
+
+// Using object keys
+function AltSwitch({cond}) {
+  return <div>{
+    {
+      A: <p>Branch-1</p>,
+      B: <p>Branch-2</p>,
+      C: <p>Branch-3</p>
+    }[cond]
+  }</div>
+}
+
+function AltSwitch2({flag1, flag2}) {
+  let key = `${flag1}-${flag2}`
+  return <div>{
+    {
+      "true-true": <p>Branch-1</p>,
+      "true-false": <p>Branch-2</p>,
+      "false-true": <p>Branch-3</p>,
+      "false-false": <p>Branch-4</p>
+    }[key]
+  }</div>
+}
 
 
 // using a function when there is a lot of and will be reused
